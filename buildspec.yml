@@ -5,15 +5,19 @@ phases:
     runtime-versions:
       python: 3.8  # Specify the Python version you want to use
     commands:
-      - echo Installing dependencies...
-      - pip install -r requirements.txt  # Install dependencies (if any)
+      - echo "Installing dependencies..."
+      # If there are no dependencies, you can skip the pip install line.
+
   build:
     commands:
-      - echo Build started on $(date)
-      - python hello_world.py  # Run the Python script
+      - echo "Build started on $(date)"
+      - python hello-world.py  # Run the Python script
+
   post_build:
     commands:
-      - echo Build completed on $(date)
+      - echo "Build completed on $(date)"
+      - echo "Hello World! Build completed successfully."
+
 artifacts:
   files:
-    - hello_world.py  # Optional: specify the files you want to save as artifacts
+    - hello-world.py  # Optional: specify the files you want to save as artifacts
